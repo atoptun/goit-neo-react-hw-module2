@@ -1,14 +1,28 @@
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
+
 import styles from './Text.module.css';
 
-export default function Text({
+/**
+ * @param {object} props
+ * @param {React.ReactNode} props.children
+ * @param {string | string[]} [props.className]
+ * @param {number} [props.top]
+ * @param {number} [props.bottom]
+ * @param {number} [props.left]
+ * @param {number} [props.right]
+ * @param {string} [props.color]
+ * @param {'start' | 'end' | 'left' | 'right' | 'center' | 'justify' | 'match-parent'} [props.align='start']
+ * @param {'p' | 'span' | 'div' | 'li' | 'b' | 'strong' | 'i' | 'em' | 'label' | 'time'} [props.tag='p']
+ */ export default function Text({
   children,
-  align = 'start',
+  className,
   top,
   bottom,
   left,
   right,
   color,
+  align = 'start',
   tag: Tag = 'p',
 }) {
   const inlineStyles = {
@@ -22,8 +36,42 @@ export default function Text({
   };
 
   return (
-    <Tag style={inlineStyles} className={styles.text}>
+    <Tag style={inlineStyles} className={clsx(styles.text, className)}>
       {children}
     </Tag>
   );
 }
+
+Text.propTypes = {
+  children: PropTypes.node.isRequired,
+  className: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]),
+  top: PropTypes.number,
+  bottom: PropTypes.number,
+  left: PropTypes.number,
+  right: PropTypes.number,
+  color: PropTypes.string,
+  align: PropTypes.oneOf([
+    'start',
+    'end',
+    'left',
+    'right',
+    'center',
+    'justify',
+    'match-parent',
+  ]),
+  tag: PropTypes.oneOf([
+    'p',
+    'span',
+    'div',
+    'li',
+    'b',
+    'strong',
+    'i',
+    'em',
+    'label',
+    'time',
+  ]),
+};
