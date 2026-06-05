@@ -1,17 +1,22 @@
 # Neoversity — React Homework #2
 
-A small educational React project prepared for the first homework assignment.
+Small educational React application demonstrating component composition, local
+state persistence, and basic styling with CSS Modules.
 
-## Features
+## Overview
 
-- Something
+- Purpose: Collect user feedback (best / good / neutral / bad) and display
+  aggregated statistics stored in `localStorage`.
+- Main features: interactive feedback buttons, total and positive percentage
+  calculation, reset option, and persistent state across page reloads.
 
-## Technologies
+## Technology Stack
 
 - React 19
 - Vite
 - CSS Modules
-- `clsx`, `modern-normalize`
+- `clsx` for conditional class names
+- `modern-normalize` for CSS normalization
 
 ## Requirements
 
@@ -26,7 +31,7 @@ A small educational React project prepared for the first homework assignment.
    pnpm install
    ```
 
-2. Start development server:
+2. Start development server (hot-reload):
 
    ```bash
    pnpm run dev
@@ -43,8 +48,3 @@ A small educational React project prepared for the first homework assignment.
    ```bash
    pnpm run preview
    ```
-
-Additional scripts:
-
-- `pnpm run lint` — run ESLint
-- `pnpm run format` — run Prettier to format the codebase

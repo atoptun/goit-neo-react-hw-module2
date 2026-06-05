@@ -29,12 +29,12 @@
   }
 }
 
-.title[style*="--heading-align: left"]::after {
+.title[style*='--heading-align: left']::after {
   left: 0;
   margin-left: 0;
 }
 
-.title[style*="--heading-align: right"]::after {
+.title[style*='--heading-align: right']::after {
   left: auto;
   right: 0;
   margin-left: 0;

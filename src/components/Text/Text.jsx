@@ -14,7 +14,8 @@ import styles from './Text.module.css';
  * @param {string} [props.color]
  * @param {'start' | 'end' | 'left' | 'right' | 'center' | 'justify' | 'match-parent'} [props.align='start']
  * @param {'p' | 'span' | 'div' | 'li' | 'b' | 'strong' | 'i' | 'em' | 'label' | 'time'} [props.tag='p']
- */ export default function Text({
+ */
+export default function Text({
   children,
   className,
   top,
